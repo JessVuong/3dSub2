@@ -24,5 +24,8 @@
     <ClInclude Include="WindowHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClCompile Include="WindowMaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
