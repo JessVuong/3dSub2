@@ -6,5 +6,6 @@ int WINAPI WinMain(
     _In_        LPSTR       lpCmdLine,
     _In_        int         nShowCmd)
 {
+    
     return 0;
 }
