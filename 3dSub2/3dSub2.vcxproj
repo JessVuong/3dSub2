@@ -161,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="WindowHelper.h" />
     <ClCompile Include="WindowMaker.cpp" />
+    <ClInclude Include="WindowMaker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

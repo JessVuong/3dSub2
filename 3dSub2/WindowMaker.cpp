@@ -1,13 +1,8 @@
-#include <Windows.h>
+#include "WindowMaker.h"
 
-
-int WINAPI WinMain(
-    _In_        HINSTANCE   hInstance,
-    _In_opt_    HINSTANCE   hPrevInstance,
-    _In_        LPSTR       lpCmdLine,
-    _In_        int         nShowCmd)
+int WindowInit(_In_ HINSTANCE hInstance)
 {
-    const auto pClassName = "3DSub2";
+    const auto pClassName = L"3DSub2";
     //register window class
     WNDCLASSEX wc = { 0 };
     //important descriptors
@@ -28,8 +23,11 @@ int WINAPI WinMain(
     RegisterClassEx(&wc);
 
     //create window
+    HWND hWnd = CreateWindowEx(0, pClassName, L"Window", WS_CAPTION , 200, 200, 640, 480, nullptr, nullptr, hInstance, nullptr);
 
+    //show window
+    ShowWindow(hWnd, SW_SHOW);
 
-
+    while (true);
     return 0;
 }
