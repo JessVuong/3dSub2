@@ -1,6 +1,20 @@
 #include "WindowMaker.h"
 
-int WindowInit(_In_ HINSTANCE hInstance)
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    switch (message)
+    {
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        return 0;
+    default:
+        break;
+    }
+
+    return DefWindowProc(hwnd, message, wParam, lParam);
+}
+
+HWND WindowInit(_In_ HINSTANCE hInstance, UINT width, UINT height)
 {
     const auto pClassName = L"3DSub2";
     //register window class
@@ -8,7 +22,7 @@ int WindowInit(_In_ HINSTANCE hInstance)
     //important descriptors
     wc.cbSize = sizeof(wc);
     wc.style = CS_OWNDC;
-    wc.lpfnWndProc = DefWindowProc; 
+    wc.lpfnWndProc = WindowProc;
     wc.hInstance = hInstance;
     wc.lpszClassName = pClassName;
 
@@ -23,11 +37,10 @@ int WindowInit(_In_ HINSTANCE hInstance)
     RegisterClassEx(&wc);
 
     //create window
-    HWND hWnd = CreateWindowEx(0, pClassName, L"Window", WS_CAPTION , 200, 200, 640, 480, nullptr, nullptr, hInstance, nullptr);
+    HWND hWnd = CreateWindowEx(0, pClassName, L"Window", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, width, height, nullptr, nullptr, hInstance, nullptr);
 
     //show window
     ShowWindow(hWnd, SW_SHOW);
 
-    while (true);
-    return 0;
+    return hWnd;
 }

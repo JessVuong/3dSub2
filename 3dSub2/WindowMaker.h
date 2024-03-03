@@ -2,4 +2,4 @@
 #include <Windows.h>
 
 
-int WindowInit(_In_ HINSTANCE hInstance);
+HWND WindowInit(_In_ HINSTANCE hInstance, UINT width, UINT height);

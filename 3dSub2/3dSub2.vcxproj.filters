@@ -16,18 +16,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="WindowHelper.cpp">
+    <ClCompile Include="JoakimsWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WindowHelper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClCompile Include="WindowMaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClInclude Include="WindowMaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="JoakimsWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
